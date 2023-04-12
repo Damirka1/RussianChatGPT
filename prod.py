@@ -16,7 +16,7 @@ import os
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
-load_md = load_model('model')
+load_md = load_model('model1')
 
 # importing navec - russian GloVe embedding model
 from navec import Navec
@@ -36,12 +36,12 @@ gs.add_vector('<end>', np.full((300,), 1))
 # Define hyperparameters
 max_word_len = 300
 embedding_dim = 300
-num_heads = 4
-dff = 64
-dropout_rate = 0.1
-learning_rate = 0.01
+num_heads = 6
+dff = 8192
+dropout_rate = 0.5
+learning_rate = 1
 epochs = 100
-num_layers = 4
+num_layers = 16
 
 # Define vocabulary size
 vocab_size = len(navec.vocab.words) + 2
